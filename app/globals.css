@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #273c59;
+  --color-sky: #b5c9e5;
+  --color-sky-lit: #c5d7f0;
+  --color-haze: #9badc7;
+  --color-orb: #bbc9e5;
+  --color-trend: #aaffc6;
+
+  --font-display: var(--font-funnel-display), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-funnel-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-wide: var(--font-michroma), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    background-color: var(--color-sky);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background-color: var(--color-ink); color: var(--color-sky); }
+  :focus-visible { outline: 1.5px solid var(--color-ink); outline-offset: 3px; }
+}
+
+@layer components {
+  /* The hero section carries `.stage-frame`; the stage measures against it. */
+  .stage-frame { container-type: inline-size; }
+
+  .stage {
+    /* First line is the fallback for engines without container query units. */
+    --stage-w: min(100vw, calc(100svh * var(--stage-ar)));
+    --stage-w: min(100cqw, calc(100svh * var(--stage-ar)));
+    --u: calc(var(--stage-w) / var(--stage-cols));
+    position: relative;
+    width: var(--stage-w);
+    height: calc(var(--stage-w) / var(--stage-ar));
+    flex: none;
+  }
+
+  .glass { background-color: rgb(158 180 212 / 0.15); }
+  .glass-tile { background-color: rgb(255 255 255 / 0.13); }
+}
+
+body[data-locked="true"] { overflow: hidden; }
