@@ -1,18 +1,18 @@
 export const NAV = [
   { id: "home", label: "Home" },
-  { id: "courses", label: "Courses" },
-  { id: "trainers", label: "Trainers" },
-  { id: "pricing", label: "Pricing" },
+  { id: "courses", label: "Servicios" },
+  { id: "trainers", label: "Metodo" },
+  { id: "pricing", label: "Contacto" },
 ] as const;
 
 export const HERO = {
-  headline: ["First", "Personal", "Brain", "Trainer"],
-  lede: "Train your mind with precision, adapt in real time, and unlock measurable cognitive performance.",
-  cta: "Start Training",
-  badge: ["Your", "mind", "Upgraded"],
-  learners: { value: "544+", label: "Active Learners" },
-  sessions: { value: "345", label: "sessions tracked" },
-  dataPoints: { value: "24K", label: "data points" },
+  headline: ["Nos anticipamos a los problemas para corregirlos"],
+  lede: "Identificamos inconsistencias y obligaciones pensionales, para que su empresa pueda actuar con informacion clara.",
+  cta: "SOLICITAR DIAGNOSTICO",
+  badge: ["Coneccion", "Identificar", "Ideas"],
+  learners: { value: "+ 237", label: "Casos exitos" },
+  sessions: { value: "360", label: "presentes en el mundo" },
+  dataPoints: { value: "24", label: "data points" },
   avgScore: { value: "1.33", label: "avg score" },
   insight: { kicker: "Neural", title: "Insights" },
 } as const;
