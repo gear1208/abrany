@@ -6,7 +6,7 @@ export const NAV = [
 ] as const;
 
 export const HERO = {
-  headline: ["Nos anticipamos a los problemas", "para corregirlos"],
+  headline: ["Nos anticipamos a los ", " problemas para corregirlos"],
   lede: "Identificamos inconsistencias y obligaciones pensionales, para que su empresa pueda actuar con informacion clara.",
   cta: "SOLICITAR DIAGNOSTICO",
   badge: ["Coneccion", "Identificar", "Ideas"],
