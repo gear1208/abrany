@@ -6,7 +6,7 @@ export const NAV = [
 ] as const;
 
 export const HERO = {
-  headline: ["Nos anticipamos a los problemas para corregirlos"],
+  headline: ["Nos anticipamos a los problemas", "para corregirlos"],
   lede: "Identificamos inconsistencias y obligaciones pensionales, para que su empresa pueda actuar con informacion clara.",
   cta: "SOLICITAR DIAGNOSTICO",
   badge: ["Coneccion", "Identificar", "Ideas"],
@@ -18,10 +18,10 @@ export const HERO = {
 } as const;
 
 export const COURSES = [
-  { id: "focus", name: "Deep Focus", minutes: 12, level: "Foundation", blurb: "Sustained-attention drills that lengthen the window before your mind drifts. The difficulty tracks your last seven sessions, not a fixed curve.", metrics: [{ value: "+34%", label: "attention span" }, { value: "12 min", label: "per session" }] },
-  { id: "memory", name: "Working Memory", minutes: 9, level: "Core", blurb: "N-back sequences that grow a step whenever you clear three rounds clean, so the load sits just above comfortable and never above useful.", metrics: [{ value: "+21%", label: "recall accuracy" }, { value: "9 min", label: "per session" }] },
-  { id: "speed", name: "Processing Speed", minutes: 7, level: "Core", blurb: "Timed pattern decisions under a shrinking clock. Reaction time is logged per millisecond and plotted against your own baseline.", metrics: [{ value: "-180ms", label: "decision time" }, { value: "7 min", label: "per session" }] },
-  { id: "flex", name: "Cognitive Flexibility", minutes: 14, level: "Advanced", blurb: "Rule-switching tasks that change the rule mid-set. Measures how fast you drop a strategy that stopped working — the hardest thing to train.", metrics: [{ value: "+27%", label: "switch cost" }, { value: "14 min", label: "per session" }] },
+  { id: "focus", name: "Diagnóstico", minutes: 12, level: "Foundation", blurb: "Información y conciliación", metrics: [{ value: "+34%", label: "attention span" }, { value: "12 min", label: "per session" }] },
+  { id: "memory", name: "Gestionar", minutes: 9, level: "Core", blurb: "Obligaciones y PWA Colpensiones", metrics: [{ value: "+21%", label: "recall accuracy" }, { value: "9 min", label: "per session" }] },
+  { id: "speed", name: "Depurar", minutes: 7, level: "Core", blurb: "Deuda empresarial pensional", metrics: [{ value: "-180ms", label: "decision time" }, { value: "7 min", label: "per session" }] },
+  { id: "flex", name: "Proyectar", minutes: 14, level: "Advanced", blurb: "Escenarios y estrategias", metrics: [{ value: "+27%", label: "switch cost" }, { value: "14 min", label: "per session" }] },
 ] as const;
 
 export const METHOD = [
