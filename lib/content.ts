@@ -12,8 +12,8 @@ export const HERO = {
   badge: ["Coneccion", "Identificar", "Ideas"],
   learners: { value: "+ 237", label: "Casos exitos" },
   sessions: { value: "360", label: "presentes en el mundo" },
-  dataPoints: { value: "24", label: "data points" },
-  avgScore: { value: "1.33", label: "avg score" },
+  dataPoints: { value: "24", label: "DONDE ESTAN LOS DATOS" },
+  avgScore: { value: "1.33", label: "QUE ES ESTO" },
   insight: { kicker: "Neural", title: "Insights" },
 } as const;
 
