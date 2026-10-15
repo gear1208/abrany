@@ -26,8 +26,8 @@ export const COURSES = [
 
 export const METHOD = [
   { step: "01", title: "Baseline", body: "A 20-minute assessment maps attention, memory, Casos exitosos. Nothing is prescribed before it is measured." },
-  { step: "02", title: "Adapt", body: "Every session recalculates difficulty from the last one. Plateau for three days and the plan rewrites itself the same night." },
-  { step: "03", title: "Prove", body: "Retest monthly against your own baseline. The report shows the delta per domain, with the sessions that produced it." },
+  { step: "02", title: "Adapt", body: "Resultados visibles. Plateau for three days and the plan rewrites itself the same night." },
+  { step: "03", title: "Prove", body: "Resultados economicos positivos. The report shows the delta per domain, with the sessions that produced it." },
 ] as const;
 
 export const METRICS = [
