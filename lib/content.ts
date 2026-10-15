@@ -18,10 +18,10 @@ export const HERO = {
 } as const;
 
 export const COURSES = [
-  { id: "focus", name: "Diagnóstico", minutes: 12, level: "Foundation", blurb: "Información y conciliación", metrics: [{ value: "+34%", label: "attention span" }, { value: "12 min", label: "per session" }] },
-  { id: "memory", name: "Gestionar", minutes: 9, level: "Core", blurb: "Obligaciones y PWA Colpensiones", metrics: [{ value: "+21%", label: "recall accuracy" }, { value: "9 min", label: "per session" }] },
-  { id: "speed", name: "Depurar", minutes: 7, level: "Core", blurb: "Deuda empresarial pensional", metrics: [{ value: "-180ms", label: "decision time" }, { value: "7 min", label: "per session" }] },
-  { id: "flex", name: "Proyectar", minutes: 14, level: "Advanced", blurb: "Escenarios y estrategias", metrics: [{ value: "+27%", label: "switch cost" }, { value: "14 min", label: "per session" }] },
+  { id: "focus", name: "Diagnóstico", minutes: 12, level: "Foundation", blurb: "Evaluación del estado actual para identificar problemas y causas.", metrics: [{ value: "+34%", label: "attention span" }, { value: "12 min", label: "per session" }] },
+  { id: "memory", name: "Gestionar", minutes: 9, level: "Core", blurb: "Administrar y coordinar recursos para alcanzar los objetivos.", metrics: [{ value: "+21%", label: "recall accuracy" }, { value: "9 min", label: "per session" }] },
+  { id: "speed", name: "Depurar", minutes: 7, level: "Core", blurb: "Corregir y optimizar información o procesos eliminando errores.", metrics: [{ value: "-180ms", label: "decision time" }, { value: "7 min", label: "per session" }] },
+  { id: "flex", name: "Proyectar", minutes: 14, level: "Advanced", blurb: "Planificar acciones futuras estimando resultados, necesidades y metas.", metrics: [{ value: "+27%", label: "switch cost" }, { value: "14 min", label: "per session" }] },
 ] as const;
 
 export const METHOD = [
