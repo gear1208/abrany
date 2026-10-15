@@ -7,13 +7,13 @@ nexport const NAV = [
 
 export const HERO = {
   headline: ["Nos anticipamos", "a los problemas", "para corregirlos"],
-  lede: "Identificamos inconsistencias y obligaciones pensionales, para que su empresa pueda actuar con informacion clara.",
-  cta: "SOLICITAR DIAGNOSTICO",
-  badge: ["Coneccion", "Identificar", "Ideas"],
-  learners: { value: "+ 237", label: "Casos exitos" },
-  sessions: { value: "360", label: "presentes en el mundo" },
+  lede: "Identificamos inconsistencias y obligaciones pensionales, para que su empresa pueda actuar con información clara.",
+  cta: "SOLICITAR DIAGNÓSTICO",
+  badge: ["Conexión", "Identificar", "Ideas"],
+  learners: { value: "+ 237", label: "Casos de éxito" },
+  sessions: { value: "5 continentes", label: "presentes en el mundo" },
   dataPoints: { value: "24", label: "Proyectando vidas" },
-  avgScore: { value: "1.33", label: "Toma de desiciones" },
+  avgScore: { value: "1.33", label: "Toma de decisiones" },
   insight: { kicker: "Neural", title: "Asegurar el futuro" },
 } as const;
 
