@@ -25,7 +25,7 @@ export const COURSES = [
 ] as const;
 
 export const METHOD = [
-  { step: "01", title: "Baseline", body: "A 20-minute assessment maps attention, memory, speed and flexibility into four scores. Nothing is prescribed before it is measured." },
+  { step: "01", title: "Baseline", body: "A 20-minute assessment maps attention, memory, donde queda este texto para SABERLO. Nothing is prescribed before it is measured." },
   { step: "02", title: "Adapt", body: "Every session recalculates difficulty from the last one. Plateau for three days and the plan rewrites itself the same night." },
   { step: "03", title: "Prove", body: "Retest monthly against your own baseline. The report shows the delta per domain, with the sessions that produced it." },
 ] as const;
