@@ -25,9 +25,9 @@ export const COURSES = [
 ] as const;
 
 export const METHOD = [
-  { step: "01", title: "Baseline", body: "A 20-minute assessment maps attention, memory, Casos exitosos. Nothing is prescribed before it is measured." },
-  { step: "02", title: "Adapt", body: "Resultados visibles. Plateau for three days and the plan rewrites itself the same night." },
-  { step: "03", title: "Prove", body: "Resultados economicos positivos. The report shows the delta per domain, with the sessions that produced it." },
+  { step: "01", title: "Desicion estrategica", body: "Definir acciones clave que orientan el proyecto hacia la máxima eficiencia y mitigación de riesgos." },
+  { step: "02", title: "Experiencia empresarial", body: "Aplicar conocimientos institucionales acumulados para optimizar procesos corporativos y la toma de decisiones." },
+  { step: "03", title: "Depuración integral", body: "Corregir, validar y sanear exhaustivamente la totalidad de expedientes e información pensional del sistema." },
 ] as const;
 
 export const METRICS = [
