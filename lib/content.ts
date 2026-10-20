@@ -6,12 +6,12 @@ nexport const NAV = [
 ] as const;
 
 export const HERO = {
-  headline: ["Nos anticipamos", "a los problemas", "para corregirlos"],
-  lede: "Identificamos inconsistencias y obligaciones pensionales, para que su empresa pueda actuar con información clara.",
-  cta: "SOLICITAR DIAGNÓSTICO",
-  badge: ["Conexión", "Identificar", "Ideas"],
-  learners: { value: "+ 237", label: "Casos de éxito" },
-  sessions: { value: "5 continentes", label: "presentes en el mundo" },
+  headline: ["Identificamos inconsistencias", "para transformarlas", "en soluciones pensionales"],
+  lede: "Analizamos información laboral y pensional para detectar inconsistencias, depurar obligaciones y orientar decisiones con criterios técnicos y documentales.",
+  cta: "SOLICITAR DIAGNÓSTICO PENSIONAL",
+  badge: ["Conectar", "Depurar", "Resolver"],
+  learners: { value: "+ 237", label: "Deteccion de Inconsistencias" },
+  sessions: { value: "5 continentes", label: "Visión Integral" },
   dataPoints: { value: "24", label: "Proyectando vidas" },
   avgScore: { value: "1.33", label: "Toma de decisiones" },
   insight: { kicker: "Neural", title: "Asegurar el futuro" },
@@ -46,7 +46,7 @@ export const TRAINERS = [
 
 export const PLANS = [
   { id: "starter", name: "Starter", monthly: 0, annual: 0, tagline: "One domain, no card needed.", features: ["Deep Focus track", "Weekly score", "3 sessions a week"], cta: "Start free", featured: false },
-  { id: "personal", name: "Personal", monthly: 19, annual: 15, tagline: "The full adaptive plan.", features: ["All four domains", "Daily adaptive difficulty", "Monthly retest report", "Neural Insights dashboard"], cta: "Start Training", featured: true },
+  { id: "personal", name: "Personal", monthly: 19, annual: 15, tagline: "The full adaptive plan.", features: ["All four domains", "Daily adaptive difficulty", "Monthly retest report", "INTELIGENCIA PENSIONAL dashboard"], cta: "Start Training", featured: true },
   { id: "lab", name: "Lab", monthly: 49, annual: 39, tagline: "For teams and researchers.", features: ["Everything in Personal", "Up to 25 seats", "Raw data export", "Trainer review calls"], cta: "Talk to us", featured: false },
 ] as const;
 
