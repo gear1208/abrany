@@ -345,7 +345,7 @@ export function Hero({ active }: { active: string }) {
           {isDesktop ? (
             <>
               <Headline size={64} style={{ left: u(34.32), top: capTop(167.47, 72, 0.873) }} />
-              <Lede size={16} width={258} style={{ left: u(111.52), top: u(442.03) }} />
+              <Lede size={16} width={300} style={{ left: u(111.52), top: u(442.03) }} />
               <div className="pointer-events-auto absolute" style={{ left: u(111.52), top: u(559.01) }}>
                 <Magnetic strength={0.28}>
                   <CtaPill />
