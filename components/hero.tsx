@@ -139,7 +139,7 @@ function Lede({ size, width, style }: { size: number; width: number; style: Reac
   return (
     <motion.p
       variants={rise}
-      className="absolute font-sans font-normal text-ink"
+      className="absolute font-sans font-normal text-ink text-justify".
       style={{ ...style, fontSize: u(size), lineHeight: 1.2, width: u(width) }}
     >
       {HERO.lede}
