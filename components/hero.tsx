@@ -102,7 +102,7 @@ function HeroHeaderMobile() {
 
 /* ---------- headline (SECTION-06) ---------- */
 
-const HEADLINE_INDENT = ["0em", "0em", "2.18em", "1.01em"];
+const HEADLINE_INDENT = ["0em", "0em", "0em"];
 
 function Headline({ size, style }: { size: number; style: React.CSSProperties }) {
   return (
@@ -344,7 +344,7 @@ export function Hero({ active }: { active: string }) {
         <motion.div style={{ y: y.near }} className={plane}>
           {isDesktop ? (
             <>
-              <Headline size={72} style={{ left: u(34.32), top: capTop(167.47, 72, 0.873) }} />
+              <Headline size={64} style={{ left: u(34.32), top: capTop(167.47, 72, 0.873) }} />
               <Lede size={16} width={258} style={{ left: u(111.52), top: u(442.03) }} />
               <div className="pointer-events-auto absolute" style={{ left: u(111.52), top: u(559.01) }}>
                 <Magnetic strength={0.28}>
