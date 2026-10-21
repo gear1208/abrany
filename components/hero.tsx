@@ -23,7 +23,7 @@ function ContactPair({ left, top }: { left: number; top: string }) {
         className="font-display font-medium uppercase text-ink transition-opacity duration-300 hover:opacity-60"
         style={{ fontSize: u(12), lineHeight: 1 }}
       >
-        Contact Us
+        Contáctenos
       </a>
       <MenuButton width={u(22.756)} gap={u(4.559)} />
     </motion.div>
@@ -139,7 +139,7 @@ function Lede({ size, width, style }: { size: number; width: number; style: Reac
   return (
     <motion.p
       variants={rise}
-      className="absolute font-sans font-normal text-ink text-justify".
+      className="absolute font-sans font-normal text-ink text-justify"
       style={{ ...style, fontSize: u(size), lineHeight: 1.2, width: u(width) }}
     >
       {HERO.lede}
