@@ -117,8 +117,8 @@ export function StatsCard({ k, w, h, left, top }: { k: number; w: number; h: num
         {value}
       </span>
       <span
-        className="absolute whitespace-nowrap font-sans font-light text-white opacity-67"
-        style={{ left: s(15.03), top: capTop(86.64 * k, 14 * k), fontSize: s(14), lineHeight: 1 }}
+        className="absolute font-sans font-light text-white opacity-67"
+        style={{ left: s(15.03), top: capTop(86.64 * k, 11 * k), width: s(84), fontSize: s(11), lineHeight: 1.15 }}
       >
         {label}
       </span>
@@ -142,8 +142,8 @@ export function StatsCard({ k, w, h, left, top }: { k: number; w: number; h: num
         {HERO.sessions.value}
       </span>
       <span
-        className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap font-sans font-light text-white opacity-67"
-        style={{ top: capTop(101 * k, 18 * k), fontSize: s(18), lineHeight: 1 }}
+        className="absolute left-1/2 -translate-x-1/2 text-center font-sans font-light text-white opacity-67"
+        style={{ top: capTop(101 * k, 14 * k), width: s(190), fontSize: s(14), lineHeight: 1.15 }}
       >
         {HERO.sessions.label}
       </span>
@@ -189,7 +189,7 @@ export function InsightCard({ k, w, h, left, top }: { k: number; w: number; h: n
       </span>
       <span
         className="absolute font-sans font-semibold text-white"
-        style={{ left: s(121.53), top: capTop(59.12 * k, 21 * k), fontSize: s(21), lineHeight: 1 }}
+        style={{ left: s(121.53), right: s(14), top: capTop(59.12 * k, 15 * k), fontSize: s(15), lineHeight: 1.1 }}
       >
         {HERO.insight.title}
       </span>
