@@ -371,7 +371,7 @@ export function Hero({ active }: { active: string }) {
             <>
               <LearnersCard k={1} w={321} h={73} radius={24} faces={5} avatar={33.243} avatarLeft={19} textLeft={177} left={970} top={174.97} />
               <StatsCard k={1} w={231} h={267} left={1090} top={328.72} />
-              <InsightCard k={1} w={231} h={176} left={545} top={476.97} />
+              <InsightCard k={1} w={300} h={176} left={545} top={476.97} />
 
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <motion.img
