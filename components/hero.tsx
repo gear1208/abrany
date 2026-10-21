@@ -36,7 +36,7 @@ function HeroHeader({ active }: { active: string }) {
       <motion.a
         variants={rise}
         href="#home"
-        aria-label="Abrany — home"
+        aria-label="Gestion Pensional Empresarial— home"
         className="pointer-events-auto absolute flex items-center"
         style={{ left: u(38), top: u(31.8), gap: u(3.5) }}
       >
