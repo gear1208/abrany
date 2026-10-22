@@ -111,10 +111,10 @@ export const METHOD = [
 ] as const;
 
 export const METRICS = [
-  { value: 4, suffix: "", label: "Líneas de servicio" },
+  { value: 5, suffix: "", label: "Líneas de servicio" },
   { value: 3, suffix: "", label: "Etapas metodológicas" },
   { value: 1, suffix: "", label: "Enfoque integral" },
-  { value: 0, suffix: "", label: "Cifras de éxito inventadas" },
+  { value: 360, suffix: "°", label: "Visión de la información" },
 ] as const;
 
 export const TRAINERS = [
