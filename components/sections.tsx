@@ -2,11 +2,10 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { AVATARS } from "@/lib/assets";
 import { COURSES, FAQS, METHOD, METRICS, PLANS, TRAINERS } from "@/lib/content";
 import { EASE, wipe } from "@/lib/motion";
 import { Counter, Drift, Magnetic, Spotlight } from "./effects";
-import { BrainGlyph, Caret } from "./glyphs";
+import { Caret } from "./glyphs";
 import {
   Container,
   Reveal,
@@ -17,20 +16,21 @@ import {
   Shell,
 } from "./reveal";
 
-/* SECTION-09 */
+/* SERVICIOS */
 export function SectionCourses() {
   const [selected, setSelected] = useState<string>(COURSES[0].id);
-  const course = COURSES.find((c) => c.id === selected) ?? COURSES[0];
+  const index = Math.max(0, COURSES.findIndex((c) => c.id === selected));
+  const course = COURSES[index];
 
   return (
     <Shell id="courses">
       <Drift className="right-[8%] top-[18%] h-[26rem] w-[26rem]" />
       <Container>
         <RevealGroup className="mb-14 flex flex-col gap-6">
-          <SectionIndex index="01" label="Courses" />
-          <SectionTitle>Four domains, one plan</SectionTitle>
+          <SectionIndex index="01" label="Servicios" />
+          <SectionTitle>¿Sabe cuánto debe realmente su empresa?</SectionTitle>
           <SectionLede>
-            Each track trains a single cognitive domain and reports against it. Pick one to see what a session actually does to the number.
+            Las inconsistencias pensionales no avisan: se acumulan en silencio. Elija un servicio y vea cómo le ayudamos a encontrarlas, corregirlas y mantenerlas bajo control.
           </SectionLede>
         </RevealGroup>
 
@@ -100,8 +100,8 @@ export function SectionCourses() {
                   transition={{ duration: 0.35, ease: EASE }}
                 >
                   <div className="flex flex-col gap-6">
-                    <span className="grid h-14 w-14 place-items-center rounded-full bg-orb text-white">
-                      <BrainGlyph className="h-6 w-6" />
+                    <span className="grid h-14 w-14 place-items-center rounded-full bg-orb font-display text-lg font-semibold text-white">
+                      {String(index + 1).padStart(2, "0")}
                     </span>
                     <h3 className="font-display text-3xl font-semibold uppercase leading-none tracking-[-0.03em] text-ink">
                       {course.name}
@@ -116,13 +116,22 @@ export function SectionCourses() {
                         key={m.label}
                         className="glass-tile flex min-w-[9.5rem] flex-1 flex-col gap-1 rounded-2xl px-5 py-4"
                       >
-                        <dd className="order-1 font-sans text-xl font-semibold tracking-[-0.02em] text-ink">
+                        <dd className="order-1 font-sans text-base font-semibold tracking-[-0.01em] text-ink">
                           {m.value}
                         </dd>
                         <dt className="order-2 font-sans text-xs font-light text-ink/60">{m.label}</dt>
                       </div>
                     ))}
                   </dl>
+                  <a
+                    href="#contact"
+                    className="group inline-flex w-fit items-center gap-3 rounded-full bg-ink px-6 py-3 font-sans text-sm font-semibold text-sky transition-opacity hover:opacity-85"
+                  >
+                    Quiero revisar mi caso
+                    <span aria-hidden className="transition-transform duration-500 group-hover:translate-x-1">
+                      →
+                    </span>
+                  </a>
                 </motion.div>
               </AnimatePresence>
             </Spotlight>
@@ -133,7 +142,7 @@ export function SectionCourses() {
   );
 }
 
-/* SECTION-11 */
+/* PROCESO */
 export function SectionMethod() {
   return (
     <Shell id="method">
@@ -141,10 +150,10 @@ export function SectionMethod() {
       <Container>
         <div className="grid gap-14 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
           <RevealGroup className="flex flex-col gap-6 lg:sticky lg:top-28 lg:self-start">
-            <SectionIndex index="02" label="Method" />
-            <SectionTitle>Measure, adapt, prove</SectionTitle>
+            <SectionIndex index="02" label="Proceso" />
+            <SectionTitle>Tres etapas, un solo objetivo</SectionTitle>
             <SectionLede>
-              Nothing is prescribed before it is measured, and nothing is claimed before it is retested. Three steps, repeated every month.
+              Cada caso sigue la misma ruta: entender la situación, depurar la información y proyectar soluciones con respaldo documental.
             </SectionLede>
           </RevealGroup>
 
@@ -192,17 +201,17 @@ export function SectionMethod() {
   );
 }
 
-/* SECTION-12 */
+/* MÉTODO GPE (id "trainers", enlazado desde el menú) */
 export function SectionTrainers() {
   return (
     <Shell id="trainers">
       <Drift className="right-[2%] bottom-[10%] h-[24rem] w-[24rem]" distance={70} />
       <Container>
         <RevealGroup className="mb-14 flex flex-col gap-6">
-          <SectionIndex index="03" label="Trainers" />
-          <SectionTitle>The people behind the numbers</SectionTitle>
+          <SectionIndex index="03" label="Método GPE" />
+          <SectionTitle>Un método para cada duda de su empresa</SectionTitle>
           <SectionLede>
-            Four names own the protocol end to end — the research it comes from, the drills it turns into, and the scoring that judges it.
+            Cuatro frentes de trabajo cubren su información pensional de punta a punta, con soporte documental en cada paso.
           </SectionLede>
         </RevealGroup>
 
@@ -211,14 +220,9 @@ export function SectionTrainers() {
             {TRAINERS.map((t, i) => (
               <motion.li key={t.name} variants={wipe(32)}>
                 <Spotlight className="glass group flex h-full flex-col gap-6 overflow-hidden rounded-[32px] p-7 transition-colors duration-500 hover:bg-white/25">
-                  <div className="relative h-14 w-14 overflow-hidden rounded-full">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={AVATARS[i % AVATARS.length]}
-                      alt=""
-                      className="h-full w-full object-cover grayscale transition-[filter,transform] duration-700 ease-out group-hover:scale-110 group-hover:grayscale-0"
-                    />
-                  </div>
+                  <span className="relative grid h-14 w-14 place-items-center rounded-full border border-ink/25 font-display text-lg font-semibold text-ink transition-colors duration-500 group-hover:bg-ink group-hover:text-sky">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <div className="relative flex flex-col gap-2">
                     <h3 className="font-display text-lg font-semibold uppercase leading-tight tracking-[-0.03em] text-ink">
                       {t.name}
@@ -237,105 +241,64 @@ export function SectionTrainers() {
   );
 }
 
-/* SECTION-13 */
+/* CONTACTO (id "pricing", enlazado desde el menú): sin precios */
 export function SectionPricing() {
-  const [cycle, setCycle] = useState<"monthly" | "annual">("monthly");
-
   return (
     <Shell id="pricing">
       <Drift className="left-[30%] top-[6%] h-[28rem] w-[28rem]" distance={110} />
       <Container>
         <RevealGroup className="mb-14 flex flex-col items-start gap-6">
-          <SectionIndex index="04" label="Pricing" />
-          <SectionTitle>Pay for the plan, not the app</SectionTitle>
-          <Reveal>
-            <div role="radiogroup" aria-label="Billing cycle" className="glass relative inline-flex rounded-full p-1">
-              {(["monthly", "annual"] as const).map((c) => {
-                const checked = cycle === c;
-                return (
-                  <button
-                    key={c}
-                    type="button"
-                    role="radio"
-                    aria-checked={checked}
-                    onClick={() => setCycle(c)}
-                    className="relative rounded-full px-6 py-2.5 font-sans text-sm font-semibold capitalize text-ink"
-                  >
-                    {checked && (
-                      <motion.span
-                        layoutId="cycle-pill"
-                        className="absolute inset-0 rounded-full bg-white/70"
-                        transition={{ duration: 0.4, ease: EASE }}
-                      />
-                    )}
-                    <span className={`relative ${checked ? "" : "opacity-50"}`}>
-                      {c}
-                      {c === "annual" && <span className="ml-2 font-light opacity-70">−20%</span>}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </Reveal>
+          <SectionIndex index="04" label="Contacto" />
+          <SectionTitle>Empecemos por entender su caso</SectionTitle>
+          <SectionLede>
+            Cuéntenos su situación y definimos juntos el alcance del servicio.
+          </SectionLede>
         </RevealGroup>
 
         <RevealGroup>
           <ul className="grid gap-5 lg:grid-cols-3">
-            {PLANS.map((plan) => {
-              const price = plan[cycle];
-              return (
-                <motion.li
-                  key={plan.id}
-                  variants={wipe(40)}
-                  whileHover={{ y: -10 }}
-                  transition={{ duration: 0.5, ease: EASE }}
-                  className={`relative flex flex-col gap-8 rounded-[40px] p-8 sm:p-10 ${
-                    plan.featured ? "bg-ink text-sky" : "glass text-ink"
-                  }`}
-                >
-                  {plan.featured && (
-                    <span className="absolute right-8 top-8 rounded-full bg-sky/20 px-3 py-1 font-sans text-[0.65rem] uppercase tracking-[0.16em]">
-                      Most chosen
-                    </span>
-                  )}
-                  <div className="flex flex-col gap-2">
-                    <h3 className="font-display text-xl font-semibold uppercase tracking-[-0.03em]">{plan.name}</h3>
-                    <p className={`font-sans text-sm ${plan.featured ? "opacity-70" : "text-ink/60"}`}>{plan.tagline}</p>
-                  </div>
-                  <div className="flex items-baseline gap-2">
-                    <motion.span
-                      key={`${plan.id}-${price}`}
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, ease: EASE }}
-                      className="font-display text-5xl font-semibold leading-none tracking-[-0.03em] tabular-nums"
-                    >
-                      ${price}
-                    </motion.span>
-                    <span className="font-sans text-sm">/ month</span>
-                  </div>
-                  <ul className="flex flex-1 flex-col gap-3">
-                    {plan.features.map((f) => (
-                      <li key={f} className="flex items-start gap-3 font-sans text-sm leading-relaxed">
-                        <span className={`mt-2 h-1 w-1 shrink-0 rounded-full ${plan.featured ? "bg-sky/70" : "bg-ink/40"}`} />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <Magnetic strength={0.22} className="block">
-                    <a
-                      href="#contact"
-                      className={`group flex items-center justify-between gap-4 rounded-full px-6 py-4 font-sans text-sm font-semibold transition-opacity hover:opacity-85 ${
-                        plan.featured ? "bg-sky text-ink" : "bg-ink text-sky"
-                      }`}
-                    >
-                      {plan.cta}
-                      <Caret className="h-4 w-4 transition-transform duration-500 ease-out group-hover:translate-x-1" />
-                    </a>
-                  </Magnetic>
-                </motion.li>
-              );
-            })}
+            {PLANS.map((plan) => (
+              <motion.li
+                key={plan.id}
+                variants={wipe(40)}
+                whileHover={{ y: -10 }}
+                transition={{ duration: 0.5, ease: EASE }}
+                className={`relative flex flex-col gap-8 rounded-[40px] p-8 sm:p-10 ${
+                  plan.featured ? "bg-ink text-sky" : "glass text-ink"
+                }`}
+              >
+                {plan.featured && (
+                  <span className="absolute right-8 top-8 rounded-full bg-sky/20 px-3 py-1 font-sans text-[0.65rem] uppercase tracking-[0.16em]">
+                    Más completo
+                  </span>
+                )}
+                <div className="flex flex-col gap-3">
+                  <h3 className="font-display text-2xl font-semibold uppercase leading-tight tracking-[-0.03em]">
+                    {plan.name}
+                  </h3>
+                  <p className={`font-sans text-sm ${plan.featured ? "opacity-70" : "text-ink/60"}`}>{plan.tagline}</p>
+                </div>
+                <ul className="flex flex-1 flex-col gap-3">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-start gap-3 font-sans text-sm leading-relaxed">
+                      <span className={`mt-2 h-1 w-1 shrink-0 rounded-full ${plan.featured ? "bg-sky/70" : "bg-ink/40"}`} />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Magnetic strength={0.22} className="block">
+                  <a
+                    href="#contact"
+                    className={`group flex items-center justify-between gap-4 rounded-full px-6 py-4 font-sans text-sm font-semibold transition-opacity hover:opacity-85 ${
+                      plan.featured ? "bg-sky text-ink" : "bg-ink text-sky"
+                    }`}
+                  >
+                    {plan.cta}
+                    <Caret className="h-4 w-4 transition-transform duration-500 ease-out group-hover:translate-x-1" />
+                  </a>
+                </Magnetic>
+              </motion.li>
+            ))}
           </ul>
         </RevealGroup>
       </Container>
@@ -343,7 +306,7 @@ export function SectionPricing() {
   );
 }
 
-/* SECTION-14 */
+/* PREGUNTAS */
 export function SectionFaq() {
   const [open, setOpen] = useState<number | null>(0);
 
@@ -353,8 +316,8 @@ export function SectionFaq() {
       <Container>
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-20">
           <RevealGroup className="flex flex-col gap-6 lg:sticky lg:top-28 lg:self-start">
-            <SectionIndex index="05" label="Questions" />
-            <SectionTitle>Straight answers</SectionTitle>
+            <SectionIndex index="05" label="Preguntas" />
+            <SectionTitle>Respuestas directas</SectionTitle>
           </RevealGroup>
 
           <RevealGroup>
