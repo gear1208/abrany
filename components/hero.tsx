@@ -139,7 +139,7 @@ function Lede({ size, width, style }: { size: number; width: number; style: Reac
   return (
     <motion.p
       variants={rise}
-      className="absolute font-sans font-normal text-ink text-justify"
+      className="absolute font-sans font-normal text-ink text-left"
       style={{ ...style, fontSize: u(size), lineHeight: 1.2, width: u(width) }}
     >
       {HERO.lede}
@@ -344,8 +344,8 @@ export function Hero({ active }: { active: string }) {
         <motion.div style={{ y: y.near }} className={plane}>
           {isDesktop ? (
             <>
-              <Headline size={64} style={{ left: u(34.32), top: capTop(167.47, 72, 0.873) }} />
-              <Lede size={16} width={300} style={{ left: u(111.52), top: u(442.03) }} />
+              <Headline size={50} style={{ left: u(34.32), top: capTop(167.47, 72, 0.873) }} />
+              <Lede size={16} width={360} style={{ left: u(111.52), top: u(442.03) }} />
               <div className="pointer-events-auto absolute" style={{ left: u(111.52), top: u(559.01) }}>
                 <Magnetic strength={0.28}>
                   <CtaPill />
