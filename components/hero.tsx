@@ -385,7 +385,7 @@ export function Hero({ active }: { active: string }) {
               <motion.p
                 variants={rise}
                 className="absolute font-display font-semibold uppercase text-ink"
-                style={{ left: u(1245.2), top: capTop(704.97, 24), fontSize: u(24), lineHeight: 1, letterSpacing: "-0.03em" }}
+                style={{ left: u(1120), top: capTop(704.97, 24), fontSize: u(24), lineHeight: 1, letterSpacing: "-0.03em" }}
               >
                 {HERO.badge[0]}
                 <br />
