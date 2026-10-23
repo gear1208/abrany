@@ -13,7 +13,10 @@ export const HERO = {
     "en soluciones pensionales",
   ],
   lede:
-    "Analizamos información laboral y pensional para detectar inconsistencias, depurar obligaciones y orientar decisiones con criterios técnicos y documentales.",
+    "Ofrecemos consultoría pensional estratégica para empresas, empresarios y clientes
+individuales en Colombia y el Mundo. Optimizamos beneficios, recuperamos aportes, corregimos
+historias laborales, proyectamos pensiones y gestionamos soluciones ante Colpensiones
+y fondos privados, con rigor técnico, visión financiera y enfoque en resultados.",
   cta: "SOLICITAR DIAGNÓSTICO PENSIONAL",
   badge: ["Detectar", "Depurar", "Proyectar"],
   learners: {
