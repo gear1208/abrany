@@ -35,7 +35,7 @@ export const viewport: Viewport = { themeColor: "#b5c9e5" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${funnelDisplay.variable} ${funnelSans.variable} ${michroma.variable}`}>
+    <html lang="es" className={`${funnelDisplay.variable} ${funnelSans.variable} ${michroma.variable}`}>
       <head>
         {ASSET_ORIGIN && (
           <>
