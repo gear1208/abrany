@@ -37,12 +37,12 @@ export function StickyHeader({ active }: { active: string }) {
           className="fixed inset-x-0 top-0 z-40 border-b border-ink/10 bg-sky/80 backdrop-blur-xl"
         >
           <div className="mx-auto flex h-16 w-full max-w-[1440px] items-center justify-between px-6 md:px-10">
-            <a href="#home" aria-label="Abrany — home" className="flex items-center gap-1.5">
+            <a href="#home" aria-label="Abrany — inicio" className="flex items-center gap-1.5">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={IMG.logoMark} alt="" className="h-4 w-4 object-contain" />
               <span className="font-wide text-[10px] uppercase tracking-[-0.06em] text-ink">Abrany</span>
             </a>
-            <nav aria-label="Sections" className="hidden items-center gap-10 md:flex">
+            <nav aria-label="Secciones" className="hidden items-center gap-10 md:flex">
               {NAV.map((item) => (
                 <a
                   key={item.id}
@@ -61,7 +61,7 @@ export function StickyHeader({ active }: { active: string }) {
                 href="#pricing"
                 className="hidden rounded-full bg-ink px-5 py-2 font-sans text-xs font-semibold text-sky transition-opacity hover:opacity-85 sm:block"
               >
-                Start Training
+                Solicitar diagnóstico
               </a>
               <MenuButton width="22.76px" gap="4.56px" />
             </div>

@@ -47,14 +47,14 @@ export function MenuButton({
       onClick={toggle}
       aria-expanded={open}
       aria-controls="site-menu"
-      aria-label={open ? "Close menu" : "Open menu"}
-      className={`group relative flex flex-col justify-center ${className ?? ""}`}
+      aria-label={open ? "Cerrar menú" : "Abrir menú"}
+      className={`group relative flex flex-col justify-center before:absolute before:-inset-5 before:content-[''] ${className ?? ""}`}
       style={{ width, gap, height: `calc(${gap} + 2px)` }}
     >
       {[0, 1].map((i) => (
         <motion.span
           key={i}
-          className="block h-px w-full origin-center bg-ink"
+          className="block h-[2px] w-full origin-center bg-ink md:h-px"
           animate={open ? { rotate: i === 0 ? 45 : -45, y: i === 0 ? "50%" : "-50%" } : { rotate: 0, y: "0%" }}
           transition={{ duration: 0.4, ease: EASE }}
         />
@@ -89,7 +89,7 @@ export function MenuOverlay() {
         <motion.div
           role="dialog"
           aria-modal="true"
-          aria-label="Site menu"
+          aria-label="Menú del sitio"
           id="site-menu"
           className="fixed inset-0 z-50 flex flex-col bg-sky/95 backdrop-blur-2xl"
           variants={panel}
@@ -106,7 +106,7 @@ export function MenuOverlay() {
             <MenuButton width="22.76px" gap="4.56px" />
           </motion.div>
 
-          <nav className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-center px-6 md:px-10" aria-label="Primary">
+          <nav className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-center px-6 md:px-10" aria-label="Principal">
             {NAV.map((item, i) => (
               <motion.a
                 key={item.id}
@@ -128,7 +128,7 @@ export function MenuOverlay() {
 
           <motion.div variants={row} className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 pb-10 md:flex-row md:items-end md:justify-between md:px-10">
             <p className="max-w-[34ch] font-sans text-sm leading-relaxed">
-             Asesoría integral en seguridad social y sistema pensional colombiano, con análisis individual de cada caso.
+              Asesoría integral en seguridad social y sistema pensional colombiano, con análisis individual de cada caso.
             </p>
             <a href="#contact" onClick={close} className="font-display text-xs uppercase tracking-[0.16em] text-ink underline-offset-4 hover:underline">
               Contáctenos

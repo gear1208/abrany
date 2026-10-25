@@ -13,9 +13,9 @@ const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 type State = "idle" | "invalid" | "sent";
 
 const NOTES: Record<State, string> = {
-  idle: "One email a month: what changed in the protocol, and why.",
-  invalid: "That address does not look right.",
-  sent: "You are on the list — first session lands in your inbox.",
+  idle: "Un correo al mes con novedades de seguridad social y pensiones.",
+  invalid: "Esa dirección de correo no parece válida.",
+  sent: "Gracias por su interés. Pronto nos pondremos en contacto.",
 };
 
 export function SiteFooter() {
@@ -61,7 +61,7 @@ export function SiteFooter() {
                 href="#pricing"
                 className="group flex items-center gap-5 rounded-full bg-ink py-4 pl-7 pr-5 font-sans text-sm font-semibold text-sky transition-opacity hover:opacity-85"
               >
-                Start Training
+                Solicitar diagnóstico pensional
                 <Caret className="h-4 w-4 transition-transform duration-500 ease-out group-hover:translate-x-1" />
               </a>
             </Magnetic>
@@ -77,7 +77,7 @@ export function SiteFooter() {
             </div>
             <form onSubmit={submit} noValidate className="flex w-full max-w-md flex-col gap-3">
               <label htmlFor="newsletter-email" className="font-sans text-xs uppercase tracking-[0.18em] text-ink/50">
-                Training notes
+                Novedades pensionales
               </label>
               <div
                 className={`flex items-center gap-3 rounded-full border bg-white/45 py-2 pl-6 pr-2 transition-colors ${
@@ -89,7 +89,7 @@ export function SiteFooter() {
                   type="email"
                   inputMode="email"
                   autoComplete="email"
-                  placeholder="you@domain.com"
+                  placeholder="correo@dominio.com"
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);
@@ -101,7 +101,7 @@ export function SiteFooter() {
                 />
                 <button
                   type="submit"
-                  aria-label="Subscribe"
+                  aria-label="Suscribirse"
                   className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ink text-sky"
                 >
                   <Caret className="h-4 w-4" />
@@ -142,9 +142,9 @@ export function SiteFooter() {
 
         <div className="flex flex-col gap-4 border-t border-ink/10 py-8 md:flex-row md:items-center md:justify-between">
           <p className="max-w-[60ch] font-sans text-xs leading-relaxed text-ink/45">
-            Abrany is a training tool, not a medical device. It does not diagnose or treat any condition.
+            La información de este sitio es de carácter general y no constituye asesoría legal ni garantiza resultados. Cada caso se estudia con base en sus antecedentes, documentos disponibles y normativa aplicable.
           </p>
-          <p className="font-sans text-xs text-ink/45">© {new Date().getFullYear()} Abrany. All rights reserved.</p>
+          <p className="font-sans text-xs text-ink/45">© {new Date().getFullYear()} Abrany. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

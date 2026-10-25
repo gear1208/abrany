@@ -15,7 +15,7 @@ import { MenuButton } from "./menu";
 
 /* ---------- navigation (SECTION-05) ---------- */
 
-function ContactPair({ left, top }: { left: number; top: string }) {
+function ContactPair({ left, top, menuW = 22.756, menuGap = 4.559 }: { left: number; top: string; menuW?: number; menuGap?: number }) {
   return (
     <motion.div variants={rise} className="pointer-events-auto absolute flex items-center" style={{ left: u(left), top, gap: u(38) }}>
       <a
@@ -25,7 +25,7 @@ function ContactPair({ left, top }: { left: number; top: string }) {
       >
         Contáctenos
       </a>
-      <MenuButton width={u(22.756)} gap={u(4.559)} />
+      <MenuButton width={u(menuW)} gap={u(menuGap)} />
     </motion.div>
   );
 }
@@ -36,7 +36,7 @@ function HeroHeader({ active }: { active: string }) {
       <motion.a
         variants={rise}
         href="#home"
-        aria-label="Gestion Pensional Empresarial— home"
+        aria-label="Gestión Pensional Empresarial — inicio"
         className="pointer-events-auto absolute flex items-center"
         style={{ left: u(38), top: u(31.8), gap: u(3.5) }}
       >
@@ -52,7 +52,7 @@ function HeroHeader({ active }: { active: string }) {
 
       <motion.nav
         variants={rise}
-        aria-label="Sections"
+        aria-label="Secciones"
         className="pointer-events-auto absolute left-1/2 flex -translate-x-1/2"
         style={{ top: capTop(34.4, 12), gap: u(95) }}
       >
@@ -88,14 +88,14 @@ function HeroHeaderMobile() {
       <motion.a
         variants={rise}
         href="#home"
-        aria-label="Abrany — home"
+        aria-label="Abrany — inicio"
         className="pointer-events-auto absolute"
         style={{ left: u(20), top: u(41.43), width: u(32.194), height: u(32.511) }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={IMG.logoMark} alt="" className="block h-full w-full object-contain" />
       </motion.a>
-      <ContactPair left={283.24} top={capTop(53.578, 12)} />
+      <ContactPair left={262} top={capTop(53.578, 12)} menuW={32} menuGap={8} />
     </div>
   );
 }
@@ -139,7 +139,7 @@ function Lede({ size, width, style }: { size: number; width: number; style: Reac
   return (
     <motion.p
       variants={rise}
-      className="absolute font-sans font-normal text-ink text-justify hyphens-auto"
+      className="absolute font-sans font-normal text-ink text-justify hyphens-auto [hyphenate-limit-chars:6_3_3]"
       style={{ ...style, fontSize: u(size), lineHeight: 1.2, width: u(width) }}
     >
       {HERO.lede}
@@ -268,7 +268,7 @@ export function Hero({ active }: { active: string }) {
                   color: "transparent",
                 }}
               >
-                Brainy
+                GPE
               </motion.p>
             </motion.div>
           )}
@@ -304,7 +304,7 @@ export function Hero({ active }: { active: string }) {
           <motion.div style={{ y: y.brain }} variants={bloom} className={plane}>
             <motion.img
               src={IMG.brain}
-              alt="Anatomical render of a human brain"
+              alt="Representación anatómica de un cerebro humano"
               className="max-w-none object-bottom"
               style={{ ...centered(brain.x, brain.y, brain.w, brain.h), rotate: 15 }}
               animate={{ opacity: isVideo ? 0 : 1, scale: isVideo ? 1.03 : 1 }}
@@ -450,8 +450,8 @@ export function Hero({ active }: { active: string }) {
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.35, ease: EASE }}
             onClick={() => setMuted((m) => !m)}
-            aria-label={muted ? "Unmute the film" : "Mute the film"}
-            title={muted ? "Unmute the film" : "Mute the film"}
+            aria-label={muted ? "Activar sonido" : "Silenciar"}
+            title={muted ? "Activar sonido" : "Silenciar"}
             className="pointer-events-auto absolute grid place-items-center rounded-full border border-ink/20 text-ink transition-colors hover:bg-white/45"
             style={{ left: u(sound.x), top: u(sound.y), width: u(sound.size), height: u(sound.size) }}
           >
