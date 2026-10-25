@@ -128,10 +128,10 @@ export function MenuOverlay() {
 
           <motion.div variants={row} className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 pb-10 md:flex-row md:items-end md:justify-between md:px-10">
             <p className="max-w-[34ch] font-sans text-sm leading-relaxed">
-              Four cognitive domains, one adaptive plan. Measured every session, retested every month.
+             Asesoría integral en seguridad social y sistema pensional colombiano, con análisis individual de cada caso.
             </p>
             <a href="#contact" onClick={close} className="font-display text-xs uppercase tracking-[0.16em] text-ink underline-offset-4 hover:underline">
-              Contact us
+              Contáctenos
             </a>
           </motion.div>
         </motion.div>
