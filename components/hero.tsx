@@ -117,7 +117,7 @@ function Headline({ size, style }: { size: number; style: React.CSSProperties })
             variants={maskWord}
             className="block whitespace-nowrap will-change-transform"
             style={
-              word === "Brain"
+              (word as string) === "Brain"
                 ? {
                     backgroundImage: "linear-gradient(180deg, #9badc7 89.759%, rgba(68,77,142,0) 132.46%)",
                     WebkitBackgroundClip: "text",

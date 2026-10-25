@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { COURSES, FAQS, METHOD, METRICS, PLANS, TRAINERS } from "@/lib/content";
+import { FAQS, METHOD, METRICS, PLANS, TRAINERS } from "@/lib/content";
+import { SERVICES, SERVICES_SECTION } from "@/lib/services";
 import { EASE, wipe } from "@/lib/motion";
 import { Counter, Drift, Magnetic, Spotlight } from "./effects";
 import { Caret } from "./glyphs";
@@ -16,27 +17,33 @@ import {
   Shell,
 } from "./reveal";
 
-/* SERVICIOS */
+/* SERVICIOS (los textos están en lib/services.ts) */
 export function SectionCourses() {
-  const [selected, setSelected] = useState<string>(COURSES[0].id);
-  const index = Math.max(0, COURSES.findIndex((c) => c.id === selected));
-  const course = COURSES[index];
+  const [selected, setSelected] = useState<string>(SERVICES[0].id);
+  const index = Math.max(0, SERVICES.findIndex((c) => c.id === selected));
+  const course = SERVICES[index];
 
   return (
     <Shell id="courses">
       <Drift className="right-[8%] top-[18%] h-[26rem] w-[26rem]" />
       <Container>
         <RevealGroup className="mb-14 flex flex-col gap-6">
-          <SectionIndex index="01" label="Servicios" />
-          <SectionTitle>¿Sabe cuánto debe realmente su empresa?</SectionTitle>
-          <SectionLede>
-            Las inconsistencias pensionales no avisan: se acumulan en silencio. Elija un servicio y vea cómo le ayudamos a encontrarlas, corregirlas y mantenerlas bajo control.
-          </SectionLede>
+          <SectionIndex index="01" label={SERVICES_SECTION.label} />
+          <Reveal>
+            <h2 className="max-w-[26ch] font-display text-[8vw] font-semibold uppercase leading-[0.95] tracking-[-0.03em] text-ink sm:text-[5vw] lg:text-[3.2vw]">
+              {SERVICES_SECTION.title}
+            </h2>
+          </Reveal>
+          <Reveal>
+            <p className="max-w-[64ch] font-sans text-base leading-[1.55] text-ink/75">
+              {SERVICES_SECTION.lede}
+            </p>
+          </Reveal>
         </RevealGroup>
 
         <RevealGroup className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-16">
           <ul className="flex flex-col">
-            {COURSES.map((c, i) => {
+            {SERVICES.map((c, i) => {
               const isSel = c.id === selected;
               return (
                 <Reveal as="li" key={c.id} className="relative">
@@ -51,7 +58,7 @@ export function SectionCourses() {
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <span
-                        className={`font-display text-2xl font-semibold uppercase leading-none tracking-[-0.03em] text-ink transition-opacity duration-300 sm:text-3xl ${
+                        className={`font-display text-lg font-semibold uppercase leading-tight tracking-[-0.02em] text-ink transition-opacity duration-300 sm:text-xl ${
                           isSel ? "opacity-100" : "opacity-40 group-hover:opacity-75"
                         }`}
                       >
@@ -59,9 +66,6 @@ export function SectionCourses() {
                       </span>
                     </span>
                     <span className="flex items-center gap-6">
-                      <span className="hidden font-sans text-xs uppercase tracking-[0.16em] text-ink/50 sm:block">
-                        {c.level}
-                      </span>
                       <motion.span
                         className="block text-ink"
                         animate={{ rotate: isSel ? 90 : 0, opacity: isSel ? 1 : 0.35 }}
@@ -103,31 +107,18 @@ export function SectionCourses() {
                     <span className="grid h-14 w-14 place-items-center rounded-full bg-orb font-display text-lg font-semibold text-white">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="font-display text-3xl font-semibold uppercase leading-none tracking-[-0.03em] text-ink">
+                    <h3 className="font-display text-2xl font-semibold uppercase leading-tight tracking-[-0.02em] text-ink">
                       {course.name}
                     </h3>
-                    <p className="max-w-[42ch] font-sans text-[0.95rem] leading-[1.6] text-ink/75">
+                    <p className="max-w-[60ch] font-sans text-[0.95rem] leading-[1.6] text-ink/75">
                       {course.blurb}
                     </p>
                   </div>
-                  <dl className="flex flex-wrap gap-3">
-                    {course.metrics.map((m) => (
-                      <div
-                        key={m.label}
-                        className="glass-tile flex min-w-[9.5rem] flex-1 flex-col gap-1 rounded-2xl px-5 py-4"
-                      >
-                        <dd className="order-1 font-sans text-base font-semibold tracking-[-0.01em] text-ink">
-                          {m.value}
-                        </dd>
-                        <dt className="order-2 font-sans text-xs font-light text-ink/60">{m.label}</dt>
-                      </div>
-                    ))}
-                  </dl>
                   <a
                     href="#contact"
                     className="group inline-flex w-fit items-center gap-3 rounded-full bg-ink px-6 py-3 font-sans text-sm font-semibold text-sky transition-opacity hover:opacity-85"
                   >
-                    Quiero revisar mi caso
+                    Solicitar diagnóstico pensional
                     <span aria-hidden className="transition-transform duration-500 group-hover:translate-x-1">
                       →
                     </span>
