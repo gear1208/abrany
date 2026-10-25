@@ -30,7 +30,7 @@ export function SectionCourses() {
         <RevealGroup className="mb-14 flex flex-col gap-6">
           <SectionIndex index="01" label={SERVICES_SECTION.label} />
           <Reveal>
-            <h2 className="max-w-[26ch] font-display text-[8vw] font-semibold uppercase leading-[0.95] tracking-[-0.03em] text-ink sm:text-[5vw] lg:text-[3.2vw]">
+            <h2 className="max-w-[26ch] text-justify font-display text-[6.4vw] font-semibold uppercase leading-[0.95] tracking-[-0.03em] text-ink sm:text-[5vw] lg:text-[3.2vw]">
               {SERVICES_SECTION.title}
             </h2>
           </Reveal>
@@ -58,7 +58,7 @@ export function SectionCourses() {
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <span
-                        className={`font-display text-lg font-semibold uppercase leading-tight tracking-[-0.02em] text-ink transition-opacity duration-300 sm:text-xl ${
+                        className={`text-justify font-display text-lg font-semibold uppercase leading-tight tracking-[-0.02em] text-ink transition-opacity duration-300 sm:text-xl ${
                           isSel ? "opacity-100" : "opacity-40 group-hover:opacity-75"
                         }`}
                       >
@@ -107,7 +107,7 @@ export function SectionCourses() {
                     <span className="grid h-14 w-14 place-items-center rounded-full bg-orb font-display text-lg font-semibold text-white">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="font-display text-2xl font-semibold uppercase leading-tight tracking-[-0.02em] text-ink">
+                    <h3 className="max-w-[60ch] text-justify font-display text-2xl font-semibold uppercase leading-tight tracking-[-0.02em] text-ink">
                       {course.name}
                     </h3>
                     <p className="max-w-[60ch] text-justify hyphens-auto font-sans text-[0.88rem] leading-[1.6] text-ink/75 sm:text-[0.95rem]">
