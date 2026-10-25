@@ -16,8 +16,24 @@ import { SmoothScroll } from "@/components/smooth-scroll";
 import { useActiveSection } from "@/lib/use-active-section";
 
 const SECTION_IDS = ["home", "courses", "trainers", "pricing"] as const;
-const DOMAINS = ["Deep Focus", "Working Memory", "Processing Speed", "Cognitive Flexibility"];
-const CLAIMS = ["Measured", "Adaptive", "Retested", "Yours"];
+/* Carrusel bajo "Servicios": invita a conocer y revisar su caso. */
+const SERVICE_PHRASES = [
+  "Conozca su historia laboral",
+  "Anticípese al riesgo",
+  "Decida con información clara",
+  "Corrija a tiempo",
+  "Su pensión empieza hoy",
+  "Solicite su diagnóstico",
+];
+/* Carrusel bajo "Trainers": llamado a dar el primer paso. */
+const ACTION_PHRASES = [
+  "Revise su caso hoy",
+  "Cada semana cotizada cuenta",
+  "Proteja su futuro pensional",
+  "Actúe a tiempo",
+  "Hable con GPE",
+  "Dé el primer paso",
+];
 
 export default function Page() {
   const active = useActiveSection(SECTION_IDS);
@@ -31,10 +47,10 @@ export default function Page() {
       <main className="overflow-x-clip">
         <Hero active={active} />
         <SectionCourses />
-        <Marquee words={DOMAINS} />
+        <Marquee words={SERVICE_PHRASES} />
         <SectionMethod />
         <SectionTrainers />
-        <Marquee words={CLAIMS} baseVelocity={1.8} />
+        <Marquee words={ACTION_PHRASES} baseVelocity={1.8} />
         <SectionPricing />
         <SectionFaq />
       </main>
