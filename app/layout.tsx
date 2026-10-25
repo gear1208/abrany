@@ -26,9 +26,9 @@ const michroma = Michroma({
 });
 
 export const metadata: Metadata = {
-  title: "Abrany — First Personal Brain Trainer",
+  title: "Abrany — Gestión Pensional Empresarial (GPE)",
   description:
-    "Train your mind with precision, adapt in real time, and unlock measurable cognitive performance.",
+    "Asesoría integral en seguridad social y sistema pensional colombiano: historia laboral, reconocimiento pensional, deuda presunta y auditoría preventiva para empresas.",
 };
 
 export const viewport: Viewport = { themeColor: "#b5c9e5" };
