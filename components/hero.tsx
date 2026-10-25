@@ -104,7 +104,7 @@ function HeroHeaderMobile() {
 
 const HEADLINE_INDENT = ["0em", "0em", "0em"];
 
-function Headline({ size, style }: { size: number; style: React.CSSProperties }) {
+function Headline({ size, style, wrap = false }: { size: number; style: React.CSSProperties; wrap?: boolean }) {
   return (
     <motion.h1
       variants={stagger(0.09, 0)}
@@ -115,7 +115,7 @@ function Headline({ size, style }: { size: number; style: React.CSSProperties })
         <span key={word} className="block overflow-hidden" style={{ marginLeft: HEADLINE_INDENT[i] }}>
           <motion.span
             variants={maskWord}
-            className="block whitespace-nowrap will-change-transform"
+            className={`block will-change-transform ${wrap ? "whitespace-normal" : "whitespace-nowrap"}`}
             style={
               (word as string) === "Brain"
                 ? {
@@ -139,7 +139,7 @@ function Lede({ size, width, style }: { size: number; width: number; style: Reac
   return (
     <motion.p
       variants={rise}
-      className="absolute font-sans font-normal text-ink text-left"
+      className="absolute font-sans font-normal text-ink text-justify hyphens-auto"
       style={{ ...style, fontSize: u(size), lineHeight: 1.2, width: u(width) }}
     >
       {HERO.lede}
@@ -147,16 +147,17 @@ function Lede({ size, width, style }: { size: number; width: number; style: Reac
   );
 }
 
-function CtaPill() {
+function CtaPill({ compact = false }: { compact?: boolean }) {
+  const orb = compact ? 56 : 72;
   return (
     <motion.a
       variants={rise}
       href="#pricing"
       className="group inline-flex items-center justify-center bg-white/62 transition-colors hover:bg-white/80"
       style={{
-        gap: u(20),
+        gap: u(compact ? 14 : 20),
         paddingLeft: u(4),
-        paddingRight: u(32),
+        paddingRight: u(compact ? 24 : 32),
         paddingTop: u(4),
         paddingBottom: u(4),
         borderRadius: u(999),
@@ -164,7 +165,7 @@ function CtaPill() {
     >
       <span
         className="grid place-items-center rounded-full bg-orb text-white"
-        style={{ width: u(72), height: u(72) }}
+        style={{ width: u(orb), height: u(orb) }}
       >
         <BrainGlyph
           className="transition-transform duration-500 ease-out group-hover:scale-110"
@@ -174,7 +175,7 @@ function CtaPill() {
       <span className="flex items-center" style={{ gap: u(12) }}>
         <RollLabel
           className="font-sans font-semibold text-ink opacity-90"
-          style={{ fontSize: u(16), lineHeight: 1, letterSpacing: "-0.02em" }}
+          style={{ fontSize: u(compact ? 13 : 16), lineHeight: 1, letterSpacing: "-0.02em", whiteSpace: "nowrap" }}
         >
           {HERO.cta}
         </RollLabel>
@@ -345,21 +346,31 @@ export function Hero({ active }: { active: string }) {
           {isDesktop ? (
             <>
               <Headline size={50} style={{ left: u(34.32), top: capTop(167.47, 72, 0.873) }} />
-              <Lede size={16} width={360} style={{ left: u(111.52), top: u(442.03) }} />
-              <div className="pointer-events-auto absolute" style={{ left: u(111.52), top: u(559.01) }}>
-                <Magnetic strength={0.28}>
-                  <CtaPill />
-                </Magnetic>
+              <div
+                className="absolute flex flex-col"
+                style={{ left: u(60), top: u(400), width: u(380), gap: u(28) }}
+              >
+                <Lede size={16} width={380} style={{ position: "relative" }} />
+                <div className="pointer-events-auto w-max">
+                  <Magnetic strength={0.28}>
+                    <CtaPill />
+                  </Magnetic>
+                </div>
               </div>
             </>
           ) : (
             <>
-              <Headline size={56} style={{ left: u(20), top: capTop(129.33, 56, 0.873) }} />
-              <Lede size={14} width={237.963} style={{ left: u(76.72), top: u(347) }} />
-              <div className="pointer-events-auto absolute" style={{ left: u(76.72), top: u(429.16) }}>
-                <Magnetic strength={0.28}>
-                  <CtaPill />
-                </Magnetic>
+              <div
+                className="absolute flex flex-col"
+                style={{ left: u(20), top: capTop(129.33, 40, 0.873), width: u(400), gap: u(22) }}
+              >
+                <Headline size={40} wrap style={{ position: "relative" }} />
+                <Lede size={14} width={400} style={{ position: "relative" }} />
+                <div className="pointer-events-auto w-max">
+                  <Magnetic strength={0.28}>
+                    <CtaPill compact />
+                  </Magnetic>
+                </div>
               </div>
             </>
           )}

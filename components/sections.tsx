@@ -35,7 +35,7 @@ export function SectionCourses() {
             </h2>
           </Reveal>
           <Reveal>
-            <p className="max-w-[64ch] font-sans text-base leading-[1.55] text-ink/75">
+            <p className="max-w-[64ch] text-justify hyphens-auto font-sans text-[0.95rem] leading-[1.55] text-ink/75 sm:text-base">
               {SERVICES_SECTION.lede}
             </p>
           </Reveal>
@@ -89,7 +89,7 @@ export function SectionCourses() {
           </ul>
 
           <motion.div variants={wipe(40)}>
-            <Spotlight className="glass flex h-full min-h-[22rem] flex-col justify-between overflow-hidden rounded-[40px] p-8 sm:p-10">
+            <Spotlight className="glass flex h-full min-h-[22rem] flex-col justify-between overflow-hidden rounded-[40px] p-6 sm:p-10">
               <span
                 aria-hidden
                 className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-white/12 blur-2xl"
@@ -110,7 +110,7 @@ export function SectionCourses() {
                     <h3 className="font-display text-2xl font-semibold uppercase leading-tight tracking-[-0.02em] text-ink">
                       {course.name}
                     </h3>
-                    <p className="max-w-[60ch] font-sans text-[0.95rem] leading-[1.6] text-ink/75">
+                    <p className="max-w-[60ch] text-justify hyphens-auto font-sans text-[0.88rem] leading-[1.6] text-ink/75 sm:text-[0.95rem]">
                       {course.blurb}
                     </p>
                   </div>
