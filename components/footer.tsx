@@ -73,7 +73,7 @@ export function SiteFooter() {
             <div className="flex items-center gap-1.5">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={IMG.logoMark} alt="" className="h-4 w-4 object-contain" />
-              <span className="font-wide text-[10px] uppercase tracking-[-0.06em] text-ink">Abrany</span>
+              <span className="font-wide text-[10px] uppercase leading-[1.2] tracking-[-0.06em] text-ink">Gestión Pensional<br />Empresarial</span>
             </div>
             <form onSubmit={submit} noValidate className="flex w-full max-w-md flex-col gap-3">
               <label htmlFor="newsletter-email" className="font-sans text-xs uppercase tracking-[0.18em] text-ink/50">

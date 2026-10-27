@@ -44,9 +44,11 @@ function HeroHeader({ active }: { active: string }) {
         <img src={IMG.logoMark} alt="" className="block object-contain" style={{ width: u(13.063), height: u(13.063) }} />
         <span
           className="font-wide uppercase text-ink"
-          style={{ fontSize: u(10), lineHeight: 1, letterSpacing: "-0.06em" }}
+          style={{ fontSize: u(10), lineHeight: 1.2, letterSpacing: "-0.06em" }}
         >
-          Abrany
+          Gestión Pensional
+          <br />
+          Empresarial
         </span>
       </motion.a>
 
@@ -88,12 +90,20 @@ function HeroHeaderMobile() {
       <motion.a
         variants={rise}
         href="#home"
-        aria-label="Abrany — inicio"
-        className="pointer-events-auto absolute"
-        style={{ left: u(20), top: u(41.43), width: u(32.194), height: u(32.511) }}
+        aria-label="Gestión Pensional Empresarial — inicio"
+        className="pointer-events-auto absolute flex items-center"
+        style={{ left: u(20), top: u(41.43), gap: u(8) }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={IMG.logoMark} alt="" className="block h-full w-full object-contain" />
+        <img src={IMG.logoMark} alt="" className="block object-contain" style={{ width: u(32.194), height: u(32.511) }} />
+        <span
+          className="font-wide uppercase text-ink"
+          style={{ fontSize: u(10), lineHeight: 1.2, letterSpacing: "-0.06em" }}
+        >
+          Gestión Pensional
+          <br />
+          Empresarial
+        </span>
       </motion.a>
       <ContactPair left={262} top={capTop(53.578, 12)} menuW={32} menuGap={8} />
     </div>

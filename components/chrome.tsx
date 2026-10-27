@@ -37,10 +37,10 @@ export function StickyHeader({ active }: { active: string }) {
           className="fixed inset-x-0 top-0 z-40 border-b border-ink/10 bg-sky/80 backdrop-blur-xl"
         >
           <div className="mx-auto flex h-16 w-full max-w-[1440px] items-center justify-between px-6 md:px-10">
-            <a href="#home" aria-label="Abrany — inicio" className="flex items-center gap-1.5">
+            <a href="#home" aria-label="Gestión Pensional Empresarial — inicio" className="flex items-center gap-1.5">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={IMG.logoMark} alt="" className="h-4 w-4 object-contain" />
-              <span className="font-wide text-[10px] uppercase tracking-[-0.06em] text-ink">Abrany</span>
+              <span className="font-wide text-[10px] uppercase leading-[1.2] tracking-[-0.06em] text-ink">Gestión Pensional<br />Empresarial</span>
             </a>
             <nav aria-label="Secciones" className="hidden items-center gap-10 md:flex">
               {NAV.map((item) => (
