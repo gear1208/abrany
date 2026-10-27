@@ -394,26 +394,31 @@ export function Hero({ active }: { active: string }) {
               <StatsCard k={1} w={231} h={267} left={1090} top={328.72} />
               <InsightCard k={1} w={300} h={176} left={545} top={476.97} />
 
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <motion.img
+              {/* Texto + cerebro en un solo bloque: el cerebro queda pegado al texto y centrado con él */}
+              <motion.div
                 variants={rise}
-                src={IMG.brainBadge}
-                alt=""
-                aria-hidden
-                className="absolute block object-contain"
-                style={{ left: u(1306.26), top: u(643.03), width: u(107.371), height: u(107.371) }}
-              />
-              <motion.p
-                variants={rise}
-                className="absolute font-display font-semibold uppercase text-ink"
-                style={{ left: u(1120), top: capTop(704.97, 24), fontSize: u(24), lineHeight: 1, letterSpacing: "-0.03em" }}
+                className="absolute flex items-center"
+                style={{ right: u(26.4), top: u(643.03), gap: u(18) }}
               >
-                {HERO.badge[0]}
-                <br />
-                {HERO.badge[1]}
-                <br />
-                {HERO.badge[2]}
-              </motion.p>
+                <p
+                  className="font-display font-semibold uppercase text-ink"
+                  style={{ fontSize: u(24), lineHeight: 1, letterSpacing: "-0.03em" }}
+                >
+                  {HERO.badge[0]}
+                  <br />
+                  {HERO.badge[1]}
+                  <br />
+                  {HERO.badge[2]}
+                </p>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={IMG.brainBadge}
+                  alt=""
+                  aria-hidden
+                  className="block shrink-0 object-contain"
+                  style={{ width: u(107.371), height: u(107.371) }}
+                />
+              </motion.div>
 
               <motion.div
                 variants={rise}
