@@ -72,7 +72,7 @@ export function SiteFooter() {
           <Reveal className="flex flex-col gap-8">
             <div className="flex items-center gap-1.5">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={IMG.logoMark} alt="" className="h-4 w-4 object-contain" />
+              <img src={IMG.logoMark} alt="" className="h-8 w-8 object-contain" />
               <span className="font-wide text-[10px] uppercase leading-[1.2] tracking-[-0.06em] text-ink">Gestión Pensional<br />Empresarial</span>
             </div>
             <form onSubmit={submit} noValidate className="flex w-full max-w-md flex-col gap-3">

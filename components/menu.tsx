@@ -100,7 +100,7 @@ export function MenuOverlay() {
           <motion.div variants={row} className="mx-auto flex h-16 w-full max-w-[1440px] shrink-0 items-center justify-between px-6 md:px-10">
             <a href="#home" onClick={close} className="flex items-center gap-1.5">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={IMG.logoMark} alt="" className="h-4 w-4 object-contain" />
+              <img src={IMG.logoMark} alt="" className="h-8 w-8 object-contain" />
               <span className="font-wide text-[10px] uppercase leading-[1.2] tracking-[-0.06em] text-ink">Gestión Pensional<br />Empresarial</span>
             </a>
             <MenuButton width="22.76px" gap="4.56px" />

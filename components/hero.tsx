@@ -41,7 +41,7 @@ function HeroHeader({ active }: { active: string }) {
         style={{ left: u(38), top: u(31.8), gap: u(3.5) }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={IMG.logoMark} alt="" className="block object-contain" style={{ width: u(13.063), height: u(13.063) }} />
+        <img src={IMG.logoMark} alt="" className="block object-contain" style={{ width: u(26.126), height: u(26.126) }} />
         <span
           className="font-wide uppercase text-ink"
           style={{ fontSize: u(10), lineHeight: 1.2, letterSpacing: "-0.06em" }}
@@ -95,7 +95,7 @@ function HeroHeaderMobile() {
         style={{ left: u(20), top: u(41.43), gap: u(8) }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={IMG.logoMark} alt="" className="block object-contain" style={{ width: u(32.194), height: u(32.511) }} />
+        <img src={IMG.logoMark} alt="" className="block object-contain" style={{ width: u(64.388), height: u(65.022) }} />
         <span
           className="font-wide uppercase text-ink"
           style={{ fontSize: u(10), lineHeight: 1.2, letterSpacing: "-0.06em" }}
